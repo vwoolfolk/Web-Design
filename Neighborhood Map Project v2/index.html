@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Woolfolk Neighborhood Map</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Udacity Neighborhood Map Project">
+    <meta name="keywords" content="Google Map">
+    <meta name="author" content="Vernisha Woolfolk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+  
+  <!-- attribution: https://stackoverflow.com/questions/9115051/html-content-to-right-of-google-map -->
+  <!-- attribution: https://knockoutjs.com/examples/simpleList.html -->
+  <!-- attribution: http://knockoutjs.com/documentation/foreach-binding.html -->
+  <!-- attribution: https://stackoverflow.com/questions/17344935/select-an-item-in-a-list-on-click-with-knockout -->
+  <div id="sidenav">
+      <h1>Detroit Sports & Entertainment</h1>
+	  <hr>
+	  <div class="search">
+         <input data-bind='value: searchTitle, valueUpdate: "afterkeydown"' id="search" type='text' placeholder="Search Venue">
+              <ul class="locationList" data-bind="foreach: List">
+              <li data-bind="click: $parent.changeLocation, text: title" ></li>
+            </ul>
+			<img src="img/Detroit.JPG">
+        </div>
+    </div>
+    <div id="map"</div>  
+  
+    <!-- scripts --> 
+   <script src="js/lib/knockout-3.2.0.js"></script>
+   <script src="js/lib/jquery-3.2.1.min.js"></script>
+   <script src="js/data.js"></script>
+   <script src="js/app.js"></script>
+   
+   
+   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEcej6kCCbVbCgFkp2JFJoXpQYiA5tBZI&v=3&callback=initMap" onerror="errorHandling()"></script>
+   
+</body>
+</html>
